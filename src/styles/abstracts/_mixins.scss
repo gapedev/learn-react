@@ -1,0 +1,81 @@
+/*** BREAKPOINTS ***/
+
+@mixin phone {
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin FullHD {
+  @media only screen and (min-width: 1600px) {
+    @content;
+  }
+}
+
+/*** TRANSFORMS ***/
+
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
+  transform: $transforms;
+}
+
+// Rotate
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// Rotate3D
+@mixin rotate3d($x, $y, $z, $deg) {
+  @include transform(rotate3d($x, $y, $z, #{$deg}deg));
+}
+
+// Scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+// Translate
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+// TranslateX
+@mixin translateX($x) {
+  @include transform(translateX($x));
+}
+
+// TranslateY
+@mixin translateY($y) {
+  @include transform(translateY($y));
+}
+
+// Translate 3D
+@mixin translate3d($x, $y, $z) {
+  @include transform(translate3d($x, $y, $z));
+}
+
+// Skew
+@mixin skew($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
